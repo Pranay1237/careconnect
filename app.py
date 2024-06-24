@@ -30,8 +30,8 @@ def create_user(email, password, username, user_type):
     user = auth.create_user_with_email_and_password(email, password)
     global userid
     userid = user['localId']
-    db.child("users").child(id).child("username").set(username)
-    db.child("users").child(id).child("user type").set(user_type)
+    db.child("users").child(userid).child("username").set(username)
+    db.child("users").child(userid).child("user type").set(user_type)
     print("User created successfully:")
 
 def log_in(email, password):
