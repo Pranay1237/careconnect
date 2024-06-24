@@ -21,6 +21,7 @@ auth = firebase.auth()
 storage = firebase.storage()
 
 app = Flask(__name__)
+port = int(os.environ.get('PORT', 5000))
 
 global userid
 userid = None
@@ -193,5 +194,5 @@ def logout():
     return redirect(url_for('home'))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(port=port)
 
